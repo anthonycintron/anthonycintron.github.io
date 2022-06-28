@@ -3,8 +3,8 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"Harlem_Apt_atlas_1", frames: [[0,0,1186,1612]]},
-		{name:"Harlem_Apt_atlas_2", frames: [[930,0,41,41],[0,0,928,1024]]}
+		{name:"Harlem_Apt_atlas_1", frames: [[0,0,1148,1324]]},
+		{name:"Harlem_Apt_atlas_2", frames: [[0,0,1186,1612]]}
 ];
 
 
@@ -28,22 +28,15 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_10 = function() {
-	this.initialize(ss["Harlem_Apt_atlas_2"]);
+(lib.CachedBmp_13 = function() {
+	this.initialize(ss["Harlem_Apt_atlas_1"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_9 = function() {
-	this.initialize(ss["Harlem_Apt_atlas_2"]);
-	this.gotoAndStop(1);
-}).prototype = p = new cjs.Sprite();
-
-
-
 (lib.Image3 = function() {
-	this.initialize(ss["Harlem_Apt_atlas_1"]);
+	this.initialize(ss["Harlem_Apt_atlas_2"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
@@ -338,11 +331,11 @@ if (reversed == null) { reversed = false; }
 	// Layer_8
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f().s("#000000").ss(0.2,1,1).p("AACAAQAAABgBAAQAAAAgBAAQAAAAgBAAIAAgBQABAAAAAAIABAAQABAAAAAAg");
-	this.shape.setTransform(18.325,607.525);
+	this.shape.setTransform(-37.6845,664.6247,1.2369,1.2369);
 
 	this.shape_1 = new cjs.Shape();
 	this.shape_1.graphics.f("#4580B8").s().p("AASAnIAAgCIACAAIABAAIABABIgBABIgBAAIgCAAgAgPgbIgFgCIAAgBIgBAAIAAgEIABgCIABAAIABgBIADgBIAAAAIAFACIAAACIAAAEIAAAAIgCACIgCABg");
-	this.shape_1.setTransform(16.325,603.725);
+	this.shape_1.setTransform(-40.1582,659.9246,1.2369,1.2369);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
 
@@ -363,13 +356,10 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// cover_up
-	this.instance = new lib.CachedBmp_10();
-	this.instance.setTransform(57.2,623.85,0.5,0.5);
+	this.instance = new lib.CachedBmp_13();
+	this.instance.setTransform(-6.8,48.25,0.5,0.5);
 
-	this.instance_1 = new lib.CachedBmp_9();
-	this.instance_1.setTransform(43.3,109.2,0.5,0.5);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
@@ -389,11 +379,11 @@ if (reversed == null) { reversed = false; }
 
 	// background
 	this.instance = new lib.Image3();
-	this.instance.setTransform(-260,-334,0.8682,0.8682);
+	this.instance.setTransform(-382,-500,1.0738,1.0738);
 
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#44968F").s().p("Eg15AE1UAkPgbIBHkgNoMgDBAl0Mg4SAiDg");
-	this.shape.setTransform(278.8,836.775);
+	this.shape.setTransform(284.4872,948.1754,1.2369,1.2369);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance}]}).wait(1));
 
@@ -1016,7 +1006,7 @@ if (reversed == null) { reversed = false; }
 
 	// remote_cart
 	this.instance = new lib.remote_cart();
-	this.instance.setTransform(470.35,159.45,1.5435,1.5435,0,0,0,22.2,24.8);
+	this.instance.setTransform(521.4,110.55,1.909,1.909,0,0,0,22.2,24.9);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
@@ -1038,7 +1028,7 @@ if (reversed == null) { reversed = false; }
 
 	// hand
 	this.instance = new lib.mous();
-	this.instance.setTransform(39.35,616.45,1.5435,1.5435,0,0,0,22.9,0.3);
+	this.instance.setTransform(-11.7,675.65,1.909,1.909,0,0,0,22.9,0.3);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
@@ -1100,7 +1090,7 @@ if (reversed == null) { reversed = false; }
 	// hand_obj_
 	this.hand = new lib.Scene_1_hand();
 	this.hand.name = "hand";
-	this.hand.setTransform(39.3,616.3,1,1,0,0,0,-226.2,198.8);
+	this.hand.setTransform(-11.7,675.5,1,1,0,0,0,-277.2,258);
 	this.hand.depth = 0;
 	this.hand.isAttachedToCamera = 0
 	this.hand.isAttachedToMask = 0
@@ -1113,7 +1103,7 @@ if (reversed == null) { reversed = false; }
 	// Layer_8_obj_
 	this.Layer_8 = new lib.Scene_1_Layer_8();
 	this.Layer_8.name = "Layer_8";
-	this.Layer_8.setTransform(16.3,603.7,1,1,0,0,0,-249.2,186.2);
+	this.Layer_8.setTransform(-40.1,660,1,1,0,0,0,-305.6,242.5);
 	this.Layer_8.depth = 0;
 	this.Layer_8.isAttachedToCamera = 0
 	this.Layer_8.isAttachedToMask = 0
@@ -1126,7 +1116,7 @@ if (reversed == null) { reversed = false; }
 	// remote_cart_obj_
 	this.remote_cart = new lib.Scene_1_remote_cart();
 	this.remote_cart.name = "remote_cart";
-	this.remote_cart.setTransform(333.8,261,1,1,0,0,0,68.3,-156.5);
+	this.remote_cart.setTransform(352.5,236,1,1,0,0,0,87,-181.5);
 	this.remote_cart.depth = 0;
 	this.remote_cart.isAttachedToCamera = 0
 	this.remote_cart.isAttachedToMask = 0
@@ -1139,7 +1129,7 @@ if (reversed == null) { reversed = false; }
 	// cover_up_obj_
 	this.cover_up = new lib.Scene_1_cover_up();
 	this.cover_up.name = "cover_up";
-	this.cover_up.setTransform(275.3,376.7,1,1,0,0,0,9.8,-40.8);
+	this.cover_up.setTransform(280.2,379.3,1,1,0,0,0,14.7,-38.2);
 	this.cover_up.depth = 0;
 	this.cover_up.isAttachedToCamera = 0
 	this.cover_up.isAttachedToMask = 0
@@ -1152,7 +1142,7 @@ if (reversed == null) { reversed = false; }
 	// background_obj_
 	this.background = new lib.Scene_1_background();
 	this.background.name = "background";
-	this.background.setTransform(254.8,366.4,1,1,0,0,0,-10.7,-51.1);
+	this.background.setTransform(254.7,366.3,1,1,0,0,0,-10.8,-51.2);
 	this.background.depth = 0;
 	this.background.isAttachedToCamera = 0
 	this.background.isAttachedToMask = 0
@@ -1165,7 +1155,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(273.5,430.5,542,851);
+p.nominalBounds = new cjs.Rectangle(158,349,733.5,932.5);
 // library properties:
 lib.properties = {
 	id: '5E33F5F7024F4F88B83C8A35F47BEF85',
@@ -1175,8 +1165,8 @@ lib.properties = {
 	color: "#000000",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Harlem_Apt_atlas_1.png", id:"Harlem_Apt_atlas_1"},
-		{src:"images/Harlem_Apt_atlas_2.png", id:"Harlem_Apt_atlas_2"}
+		{src:"images/Harlem_Apt_atlas_1.png?1656441634051", id:"Harlem_Apt_atlas_1"},
+		{src:"images/Harlem_Apt_atlas_2.png?1656441634051", id:"Harlem_Apt_atlas_2"}
 	],
 	preloads: []
 };
