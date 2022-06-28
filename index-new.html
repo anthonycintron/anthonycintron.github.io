@@ -62,10 +62,14 @@
       padding: 10px;
       font-size: 2vw;
     }
-    @media screen and (max-width: 414px),
-     {
+
+    @media screen and (width: 414px)
+    {
+      button {
+        width: 100px;
+      }
       button h1 {
-        font-size: 5vw;
+        font-size: 10vw;
       }
 
       button p {
@@ -74,6 +78,23 @@
 
       button label {
         font-size: 3vw;
+      }
+    }
+
+    @media screen and (max-width: 1024px)
+    {
+
+      button {
+        width: 275px;
+      }
+      button h1 {
+        font-size: 3vw;
+      }
+      button p {
+        font-size: 2vw;
+      }
+      button label {
+        font-size: 2vw;
       }
     }
 
@@ -98,7 +119,7 @@
       </button>
       <button type="button" >
         <h1>Designs</h1>
-        <p>Visual graphics to help communicate complex industry concepts</p>
+        <p>Graphics to help understand complex concepts</p>
         <label>View</label>
       </button>
     </div>
