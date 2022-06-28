@@ -541,24 +541,24 @@ if (reversed == null) { reversed = false; }
 	this.instance.setTransform(228.75,786.75,1,1,0,0,0,-131.1,129.2);
 
 	this.instance_1 = new lib.Image1();
-	this.instance_1.setTransform(0,69,0.6276,0.6276);
+	this.instance_1.setTransform(238,10,0.7215,0.7215);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(274.5,500.5,316.70000000000005,316.70000000000005);
+p.nominalBounds = new cjs.Rectangle(745.1,441.5,172.60000000000002,428.6);
 // library properties:
 lib.properties = {
 	id: '5E33F5F7024F4F88B83C8A35F47BEF85',
-	width: 549,
+	width: 1080,
 	height: 863,
 	fps: 24,
 	color: "#000000",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Product Factory_atlas_1.png?1656436851468", id:"Product Factory_atlas_1"}
+		{src:"images/Product Factory_atlas_1.png?1656440699021", id:"Product Factory_atlas_1"}
 	],
 	preloads: []
 };
