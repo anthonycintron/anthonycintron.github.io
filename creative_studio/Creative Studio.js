@@ -536,29 +536,32 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// Layer_1
+	this.instance = new lib.remote_cart();
+	this.instance.setTransform(808.3,1210.1,1.7942,1.7942,0,0,0,-131,129.2);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
 	// background
-	this.instance = new lib.Image2();
-	this.instance.setTransform(5,84,0.5373,0.5373);
+	this.instance_1 = new lib.Image2();
+	this.instance_1.setTransform(68,-10,0.964,0.964);
 
-	this.instance_1 = new lib.remote_cart();
-	this.instance_1.setTransform(228.75,786.75,1,1,0,0,0,-131.1,129.2);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(279.5,515.5,259.6,298.5);
+p.nominalBounds = new cjs.Rectangle(608,640,418.29999999999995,618.9000000000001);
 // library properties:
 lib.properties = {
 	id: '5E33F5F7024F4F88B83C8A35F47BEF85',
-	width: 549,
-	height: 863,
+	width: 1080,
+	height: 1300,
 	fps: 24,
 	color: "#000000",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Creative Studio_atlas_1.png?1656436831679", id:"Creative Studio_atlas_1"}
+		{src:"images/Creative Studio_atlas_1.png?1656442174608", id:"Creative Studio_atlas_1"}
 	],
 	preloads: []
 };
