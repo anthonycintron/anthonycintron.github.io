@@ -16,7 +16,50 @@
       font-family: 'Poppins', sans-serif;
       background-color: #000;
     }
-    .productContainer {
+    h1, h2, h3 {
+      color: #fff;
+      font-family: 'Poppins ExtraLight', sans-serif;
+      font-size: 5vw;
+    }
+    h2 {
+      font-size: 4vw;
+    }
+    h3 {
+      font-size: 3vw;
+    }
+    h2.hello, h2.who_am_i {
+      padding-left: 50px;
+    }
+    h2.who_am_i, h2.site_domain {
+      font-size: 2vw;
+      color: #323232;
+      font-family: 'Poppins Regular', sans-serif;
+    }
+    h2.site_domain, img.avatar {
+      margin-right: 50px;
+    }
+    #brand {
+      text-align: right;
+    }
+    .column {
+      float: left;
+      width: 50%;
+    }
+    /*clear floats after the columns*/
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    h1.method_title {
+      color: #62A887;
+    }
+    p {
+      color: #707070;
+      font-size: 4vw;
+      font-family: 'Poppins ExtraLight', sans-serif;
+    }
+    .productContainer  {
       width: 100%;
       background-color: #000000;
       margin: auto;
@@ -49,19 +92,7 @@
     .productContainer button label {
       top: 30px;
     }
-    h1 {
-      color: #fff;
-      font-family: 'Poppins ExtraLight', sans-serif;
-      font-size: 5vw;
-    }
-    h1.method_title {
-      color: #62A887;
-    }
-    p {
-      color: #707070;
-      font-size: 4vw;
-      font-family: 'Poppins ExtraLight', sans-serif;
-    }
+
     button {
       position: relative;
       width: 350px;
@@ -108,11 +139,22 @@
       }
     }
 
+
   </style>
 
 </head>
 
 <body>
+  <div id="header" class="row">
+    <div id="introduction" class="column">
+      <h2 class="hello">I'm Anthony Cintron.</h2>
+      <h2 class="who_am_i">A product strategist, technologist, and designer.</h2>
+    </div>
+    <div id="brand" class="column">
+      <h2 class="site_domain">anthonycintron.com</h2>
+      <img class="avatar" src="images/avatar.png"/>
+    </div>
+  </div>
   <div id="productDesign" class="productContainer">
     <h1 class="method_title">Product Design</h1>
     <p>The challenges were pretty huge and the team had only 6 months to live. We were able to wave our magic wands and cultivate our super metaphysics powers to tackle all that doubted the omega. </p>
