@@ -51,6 +51,16 @@
       display: table;
       clear: both;
     }
+    #experienceContainer {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    #experienceContainer p {
+      color: #fff;
+    }
+    #experienceContainer img {
+      position: absolute;
+    }
     h1.method_title {
       color: #62A887;
     }
@@ -65,6 +75,10 @@
       margin: auto;
       left: 50%;
       right: 50%;
+    }
+    #productDesign {
+      position: sticky;
+      margin-top: 800px;
     }
     .productContainer p,
     .productContainer h1.method_title,
@@ -117,7 +131,6 @@
       font-size: 2vw;
       font-family: 'Poppins', sans-serif;
     }
-
     @media screen and (max-width: 1024px)
     {
       .productContainer p {
@@ -145,6 +158,8 @@
 </head>
 
 <body>
+  <!-- Beginning -->
+
   <div id="header" class="row">
     <div id="introduction" class="column">
       <h2 class="hello">I'm Anthony Cintron.</h2>
@@ -155,6 +170,21 @@
       <img class="avatar" src="images/avatar.png"/>
     </div>
   </div>
+
+  <div id="experienceContainer">
+    <p>20+ years of professional experiences in B2B and B2C SaaS and professional service markets.</p>
+    <img class="mychapteroom" src="images/mychapter_room.png"></img>
+    <img class="openstile" src="images/openstile.png"></img>
+    <img class="butterfly1" src="images/lubjana.png"></img>
+    <img class="ironsight" src="images/IronSight.png"></img>
+    <p>I build products customers want, without wasting time on things they don't.</p>
+    <img class="ironsight2" src="images/IronSight_2.png"></img>
+    <img class="butterfly2" src="images/Butterfly_lubjana.png"></img>
+    <div id="trustedCompanies">
+    </div>
+  </div>
+
+  <!-- Middle -->
   <div id="productDesign" class="productContainer">
     <h1 class="method_title">Product Design</h1>
     <p>The challenges were pretty huge and the team had only 6 months to live. We were able to wave our magic wands and cultivate our super metaphysics powers to tackle all that doubted the omega. </p>
@@ -223,6 +253,8 @@
     </div>
     <iframe id="CreativeStudioFrame" src="creative_studio/Creative Studio.html" width="100%" height="1300" title="Creative Studio"></iframe>
   </div>
+
+  <!-- END -->
 
 </body>
 
