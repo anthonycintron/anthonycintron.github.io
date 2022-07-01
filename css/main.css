@@ -1,0 +1,183 @@
+iframe {
+  position: relative;
+  border: none;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+}
+h1, h2, h3 {
+  color: #fff;
+  font-family: 'Poppins ExtraLight', sans-serif;
+  font-size: 5vw;
+}
+h2 {
+  font-size: 4vw;
+}
+h3 {
+  font-size: 3vw;
+}
+h2.hello, h2.who_am_i {
+  padding-left: 50px;
+}
+h2.who_am_i, h2.site_domain {
+  font-size: 2vw;
+  color: #707070;
+  font-family: 'Poppins Regular', sans-serif;
+}
+h2.site_domain, img.avatar {
+  margin-right: 50px;
+}
+#brand {
+  text-align: right;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+/*clear floats after the columns*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#experienceContainer {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+#experienceContainer p {
+  color: #fff;
+}
+#experienceContainer img.designsprints {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+#trustedCompanies {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+}
+table.GeneratedTable {
+  width: 100%;
+  background-color: #333333;
+  border-collapse: collapse;
+  border-width: 10px;
+  border-color: #000000;
+  border-style: solid;
+  color: #000000;
+}
+
+table.GeneratedTable td {
+  border-width: 10px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 3px;
+}
+
+table.GeneratedTable thead {
+  background-color: #ffcc00;
+}
+h1.method_title {
+  color: #62A887;
+}
+p {
+  color: #707070;
+  font-size: 4vw;
+  font-family: 'Poppins ExtraLight', sans-serif;
+}
+.productContainer  {
+  width: 100%;
+  background-color: #000000;
+  margin: auto;
+  left: 50%;
+  right: 50%;
+}
+#productDesign {
+  position: sticky;
+  margin-top: 200px;
+}
+.productContainer p,
+.productContainer h1.method_title,
+.productContainer .project-btn-container {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  align-content: center;
+}
+.productContainer button h1 {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  top: -5px;
+}
+.productContainer Button p {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.productContainer .project-btn-container{
+  display: flex;
+}
+.productContainer button label {
+  top: 30px;
+}
+.social_media {
+  position: relative;
+  padding-left: 100px;
+  padding-right: 50px;
+  width: 880px;
+}
+.social_media img {
+  position: relative;
+  margin: 50px;
+}
+.credits {
+  font-size: 1.5vw;
+  color: #fff;
+}
+button {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background-color: #000000;
+  border-style: solid;
+  border-color: #323232;
+  margin-right: 10px;
+}
+button h1 {
+  position: relative;
+  font-size:3vw;
+}
+button p {
+  position: relative;
+  font-size: 2vw;
+}
+label {
+  position: relative;
+  background-color: #FC8E06;
+  padding: 10px;
+  font-size: 2vw;
+  font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width: 1024px)
+{
+  .productContainer p {
+    font-size: 3vw;
+  }
+  button {
+    width: 280px;
+    height: 300px;
+  }
+  button h1 {
+    font-size: 3vw;
+  }
+  button p {
+    font-size: 3vw;
+
+  }
+  button label {
+    font-size: 3vw;
+  }
+}

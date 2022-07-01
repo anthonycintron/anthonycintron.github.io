@@ -1,0 +1,83 @@
+h2.tagline {
+  font-size: 3vw;
+  margin-left: 50px;
+}
+
+#headerRight {
+  text-align: right;
+}
+
+img.avatar {
+  width: 55px;
+  margin-right: 0px;
+}
+
+h2.site_domain {
+  margin-top: 50px;
+  font-size: 1.5vw;
+}
+.social_media{
+  width: 200px;
+  margin: 0px;
+  padding-left: 0px;
+  float: right;
+}
+.social_media img {
+  width: 30px;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 0px;
+}
+#subNav {
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 150px;
+}
+#subNav p {
+  font-size: 2vw;
+  color: #fff;
+  float: left;
+}
+#subNav a {
+  margin-top: 30px;
+  font-size: 2vw;
+  float: right;
+  color: #ff9933;
+  clear;
+}
+#subNav p span {
+  color: #638d74;
+}
+#portfolioCollection {
+  position: relative;
+  margin-left: 50px;
+  margin-right: 50px;
+
+}
+.descriptionContainer {
+  float: right;
+  width: 400px;
+}
+.descriptionContainer h3.title {
+  margin-top: 0px;
+}
+.descriptionContainer h3.shortDescription {
+  font-size: 1.5vw;
+}
+.portfolioItem {
+  position: relative;
+  height:400px;
+  width:1136px
+}
+.thumbnail {
+  width:auto;
+}
+#footer{
+  position: relative;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 800px;
+}
