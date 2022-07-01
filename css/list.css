@@ -75,9 +75,10 @@ h2.site_domain {
 .thumbnail {
   width:auto;
 }
+a.viewBtn {
+  color: #ff9933;
+}
 #footer{
   position: relative;
-  margin-left: 50px;
-  margin-right: 50px;
-  width: 800px;
+  font-size: 2vw;
 }
