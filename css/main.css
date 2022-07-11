@@ -66,6 +66,8 @@ h2.site_domain, img.avatar {
 }
 #experienceContainer p {
   color: #fff;
+  text-align: center;
+  margin-top: 150px;
 }
 #experienceContainer img.designsprints {
   position: relative;
