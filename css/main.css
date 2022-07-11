@@ -38,6 +38,7 @@ h3 {
 }
 h2.hello, h2.who_am_i {
   padding-left: 50px;
+  color: #62A887;
 }
 h2.who_am_i, h2.site_domain {
   font-size: 2vw;
@@ -81,7 +82,7 @@ h2.site_domain, img.avatar {
 }
 table.GeneratedTable {
   width: 100%;
-  background-color: #333333;
+  background-color: #000;
   border-collapse: collapse;
   border-width: 10px;
   border-color: #000000;
@@ -99,7 +100,7 @@ table.GeneratedTable td {
 table.GeneratedTable thead {
   background-color: #ffcc00;
 }
-h1.method_title {
+h1.method_title, #trustedCompanies h2 {
   color: #62A887;
 }
 p {
