@@ -55,26 +55,32 @@ h2.site_domain {
   position: relative;
   margin-left: 50px;
   margin-right: 50px;
-
+}
+h3.title {
+  color: #638d74;
+}
+img.thumbnail {
+  width: 600px;
+  height: 500px;
+  padding-bottom: 50px;
 }
 .descriptionContainer {
-  float: right;
-  width: 400px;
+  padding-left: 20px;
+  margin-top: -30px;
 }
+/*
 .descriptionContainer h3.title {
   margin-top: 0px;
-}
+} */
 .descriptionContainer h3.shortDescription {
   font-size: 1.5vw;
 }
 .portfolioItem {
   position: relative;
-  height:400px;
-  width:1136px
+  margin-top: 50px;
 }
-.thumbnail {
-  width:auto;
-}
+
+
 a.viewBtn {
   color: #ff9933;
 }
