@@ -60,13 +60,13 @@ h3.title {
   color: #638d74;
 }
 img.thumbnail {
-  width: 600px;
-  height: 500px;
   padding-bottom: 50px;
+  width: 100%;
 }
 .descriptionContainer {
   padding-left: 20px;
   margin-top: -30px;
+  width: 100%;
 }
 /*
 .descriptionContainer h3.title {
@@ -87,4 +87,10 @@ a.viewBtn {
 #footer{
   position: relative;
   font-size: 2vw;
+  text-align: center;
+}
+
+.credits {
+  text-align: center;
+  color: #707070;
 }
