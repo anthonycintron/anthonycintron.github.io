@@ -3,6 +3,10 @@ h1 {
   position: relative;
 
 }
+.social_media{
+  width: 250px;
+  
+}
 .container {
   position: relative;
   margin-left: 50px;
