@@ -10,19 +10,20 @@ p {
   color: #fff;
 }
 
-#footer {
-  position: relative;
+.detail-container ul li {
+  color: #ffffff;
+  font-size: 1.5vw;
+  font-family: 'poppinsextralight', Fallback, sans-serif;
 }
 
 .detail-container {
-  width: 400px;
-  float:left;
+  padding-right: 20px;
 }
 * {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 800px;
+  max-width: 600px;
   position: relative;
   margin: 0px;
   float:right;
