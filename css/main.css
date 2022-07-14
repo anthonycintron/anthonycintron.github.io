@@ -108,6 +108,9 @@ p {
   font-size: 4vw;
   font-family: 'poppinsextralight', Fallback, sans-serif;
 }
+.sectionOverview {
+  color: #ffffff;
+}
 .productContainer  {
   width: 100%;
   background-color: #000000;
