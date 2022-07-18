@@ -98,9 +98,8 @@ p.clientBio {
   color: #666666;
   background-color: #000000;
   font-size: 1.5vw;
-  position: absolute;
-  width: 100%;
-  text-align: center;
+  position: relative;
+  text-align: left;
 }
 
 /* Number text (1/3 etc) */
@@ -111,7 +110,6 @@ p.clientBio {
   position: absolute;
   background-color: #000000;
   opacity: 50%;
-
 }
 
 /* The dots/bullets/indicators */

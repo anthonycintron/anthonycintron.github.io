@@ -34,7 +34,7 @@ h2.site_domain {
 #subNav {
   margin-left: 50px;
   margin-right: 50px;
-
+  height: 100px
 }
 #subNav p {
   font-size: 2.5vw;
@@ -46,7 +46,6 @@ h2.site_domain {
   font-size: 2.5vw;
   float: right;
   color: #ff9933;
-  clear;
 }
 #subNav p span {
   color: #638d74;
@@ -79,8 +78,6 @@ img.thumbnail {
   position: relative;
   margin-top: 50px;
 }
-
-
 a.viewBtn {
   color: #ff9933;
   font-size: 1.5vw;
@@ -90,7 +87,6 @@ a.viewBtn {
   font-size: 2vw;
   text-align: center;
 }
-
 .credits {
   text-align: center;
   color: #707070;
