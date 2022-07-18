@@ -110,6 +110,7 @@ p {
 }
 .sectionOverview {
   color: #ffffff;
+  text-align: center;
 }
 .productContainer  {
   width: 100%;
@@ -118,10 +119,7 @@ p {
   left: 50%;
   right: 50%;
 }
-#productDesign {
-  position: sticky;
-  margin-top: 200px;
-}
+
 .productContainer p,
 .productContainer h1.method_title,
 .productContainer .project-btn-container {
@@ -130,22 +128,23 @@ p {
   text-align: center;
   align-content: center;
 }
-.productContainer button h1 {
+
+button#productDesignBtn {
   position: relative;
-  margin-top: 0;
-  margin-bottom: 0;
-  top: -5px;
+  width: 90%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
-.productContainer Button p {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+
+button#productDesignBtn h1 {
+  color: #62A887;
 }
+
+
 .productContainer .project-btn-container{
   display: flex;
 }
-.productContainer button label {
+#productDesignBtn label {
   top: 30px;
 }
 .social_media {
