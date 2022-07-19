@@ -151,6 +151,7 @@ button#productDesignBtn h1 {
 }
 #productDesignBtn label {
   top: 30px;
+  color: #000000;
 }
 .social_media {
   position: relative;
