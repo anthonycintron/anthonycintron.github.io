@@ -17,6 +17,7 @@
     font-style: normal;
 
 }
+
 iframe {
   position: relative;
   border: none;
@@ -30,6 +31,7 @@ h1, h2, h3 {
   font-family: 'poppinsextralight', Fallback, sans-serif;
   font-size: 5vw;
 }
+
 h2 {
   font-size: 4vw;
 }
@@ -42,7 +44,7 @@ h2.hello, h2.who_am_i {
 }
 h2.who_am_i, h2.site_domain {
   font-size: 2vw;
-  color: #707070;
+  color: #A88C51;
   font-family: 'poppinsregular', Fallback, sans-serif;
 }
 h2.site_domain, img.avatar {
@@ -61,6 +63,7 @@ h2.site_domain, img.avatar {
   display: table;
   clear: both;
 }
+
 #experienceContainer {
   margin-left: 50px;
   margin-right: 50px;
@@ -68,7 +71,7 @@ h2.site_domain, img.avatar {
 #experienceContainer p {
   color: #fff;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 #experienceContainer img.designsprints {
   position: relative;
@@ -104,7 +107,7 @@ h1.method_title, #trustedCompanies h2 {
   color: #62A887;
 }
 p {
-  color: #707070;
+  color: #A88C51;
   font-size: 4vw;
   font-family: 'poppinsextralight', Fallback, sans-serif;
 }
@@ -132,8 +135,10 @@ p {
 button#productDesignBtn {
   position: relative;
   width: 90%;
+  height: 300px;
   margin-left: 50px;
   margin-right: 50px;
+  padding-bottom: 50px;
 }
 
 button#productDesignBtn h1 {
@@ -149,13 +154,13 @@ button#productDesignBtn h1 {
 }
 .social_media {
   position: relative;
-  padding-left: 100px;
+  text-align: center;
+  padding-left: 50px;
   padding-right: 50px;
-  width: 880px;
 }
-.social_media img {
-  position: relative;
-  margin: 50px;
+.social_media a {
+  width: 20%;
+  margin: 15px;
 }
 .credits {
   font-size: 1.5vw;
@@ -167,7 +172,7 @@ button {
   height: 350px;
   background-color: #000000;
   border-style: solid;
-  border-color: #323232;
+  border-color: #5C4E31;
   margin-right: 10px;
 }
 button h1 {
@@ -180,7 +185,7 @@ button p {
 }
 label {
   position: relative;
-  background-color: #FC8E06;
+  background-color: #9872A8;
   padding: 10px;
   font-size: 2vw;
   font-family: 'poppinsregular', Fallback, sans-serif;

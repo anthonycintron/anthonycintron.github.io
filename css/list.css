@@ -1,4 +1,5 @@
 h2.tagline {
+  color: #62A887;
   font-size: 3vw;
   margin-left: 50px;
 }
@@ -45,10 +46,10 @@ h2.site_domain {
   margin-top: 30px;
   font-size: 2.5vw;
   float: right;
-  color: #ff9933;
+  color: #9872A8;
 }
-#subNav p span {
-  color: #638d74;
+#subNav p {
+  color: #A88C51;
 }
 #portfolioCollection {
   position: relative;
@@ -79,8 +80,8 @@ img.thumbnail {
   margin-top: 50px;
 }
 a.viewBtn {
-  color: #ff9933;
-  font-size: 1.5vw;
+  color: #9872A8;
+  font-size: 2vw;
 }
 #footer{
   position: relative;

@@ -5,7 +5,11 @@ h1 {
 }
 .social_media{
   width: 250px;
+  padding-right: 0;
 
+}
+.social_media a {
+  margin: 0;
 }
 .container {
   position: relative;
@@ -35,7 +39,7 @@ img.logo {
   margin-left: 50px;
 }
 p.clientBio {
-  
+
   float: right;
   clear;
   margin-top: 5%;
