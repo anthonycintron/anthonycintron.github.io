@@ -181,13 +181,15 @@ p.sectionOverview {
 
 #productDesignBtn p.sectionOverview {
   font-size: 1.5vw;
-  
+
 }
 #productDesignBtn a {
   position: relative;
   text-decoration: none;
   top: 30px;
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #000000;
   background-color: #9872A8;
 
@@ -199,12 +201,14 @@ p.sectionOverview {
   font-family: 'poppinsregular', Fallback, sans-serif;
 }
 
-#productDesignBtn a:hover {
-  background-color: #ffffff;
-  text-decoration: none;
-  color: #9872A8;
-}
 
+
+#productDesignBtn a:hover {
+  color: #9872A8;
+  background-color: #000000;
+  border-style: solid;
+  border-color: #9872A8;
+}
 @media screen and (max-width: 1024px)
 {
   .productContainer p {

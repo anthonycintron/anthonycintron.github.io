@@ -20,6 +20,7 @@ h2.site_domain {
 .social_media{
   width: 200px;
   margin: 0px;
+  top: 50px;
   padding-left: 0px;
   float: right;
 }
@@ -44,9 +45,25 @@ h2.site_domain {
 }
 #subNav a {
   margin-top: 30px;
-  font-size: 2.5vw;
+  font-size: 2vw;
   float: right;
+  color: #000000;
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  text-decoration: none;
+  background-color: #9872A8;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#subNav a:hover {
   color: #9872A8;
+  background-color: #000000;
+  border-style: solid;
+  border-color: #9872A8;
 }
 #subNav p {
   color: #A88C51;
@@ -64,7 +81,6 @@ img.thumbnail {
   width: 100%;
 }
 .descriptionContainer {
-  padding-left: 20px;
   margin-top: -30px;
   width: 100%;
 }
@@ -80,8 +96,23 @@ img.thumbnail {
   margin-top: 50px;
 }
 a.viewBtn {
-  color: #9872A8;
+  color: #000000;
   font-size: 2vw;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  text-decoration: none;
+  background-color: #9872A8;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+a.viewBtn:hover {
+  color: #9872A8;
+  background-color: #000000;
+  border-style: solid;
+  border-color: #9872A8;
 }
 #footer{
   position: relative;
