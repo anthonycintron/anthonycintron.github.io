@@ -92,14 +92,12 @@ table.GeneratedTable {
   border-style: solid;
   color: #000000;
 }
-
 table.GeneratedTable td {
   border-width: 10px;
   border-color: #000000;
   border-style: solid;
   padding: 3px;
 }
-
 table.GeneratedTable thead {
   background-color: #ffcc00;
 }
@@ -107,13 +105,16 @@ h1.method_title, #trustedCompanies h2 {
   color: #62A887;
 }
 p {
-  color: #A88C51;
+  color: #FFFFFF;
   font-size: 4vw;
   font-family: 'poppinsextralight', Fallback, sans-serif;
 }
-.sectionOverview {
+p.sectionOverview {
+  position: relative;
   color: #ffffff;
   text-align: center;
+  top: 50px;
+  padding: 50px;
 }
 .productContainer  {
   width: 100%;
@@ -122,7 +123,6 @@ p {
   left: 50%;
   right: 50%;
 }
-
 .productContainer p,
 .productContainer h1.method_title,
 .productContainer .project-btn-container {
@@ -131,27 +131,11 @@ p {
   text-align: center;
   align-content: center;
 }
-
-button#productDesignBtn {
-  position: relative;
-  width: 90%;
-  height: 300px;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding-bottom: 50px;
-}
-
-button#productDesignBtn h1 {
+#productDesignBtn h1 {
   color: #62A887;
 }
-
-
 .productContainer .project-btn-container{
   display: flex;
-}
-#productDesignBtn label {
-  top: 30px;
-  color: #000000;
 }
 .social_media {
   position: relative;
@@ -167,47 +151,74 @@ button#productDesignBtn h1 {
   font-size: 1.5vw;
   color: #fff;
 }
-button {
+#productDesignBtn {
   position: relative;
-  width: 350px;
-  height: 350px;
+  text-align: center;
+
   background-color: #000000;
   border-style: solid;
   border-color: #5C4E31;
-  margin-right: 10px;
+
+
+  width: 90%;
+  height: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 50px;
+
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
-button h1 {
+#productDesignBtn h1 {
   position: relative;
   font-size:3vw;
 }
-button p {
+#productDesignBtn p {
   position: relative;
   font-size: 2vw;
 }
-label {
+
+#productDesignBtn p.sectionOverview {
+  font-size: 1.5vw;
+  
+}
+#productDesignBtn a {
   position: relative;
-  background-color: #9872A8;
+  text-decoration: none;
+  top: 30px;
   padding: 10px;
+  color: #000000;
+  background-color: #9872A8;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
   font-size: 2vw;
   font-family: 'poppinsregular', Fallback, sans-serif;
 }
+
+#productDesignBtn a:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+  color: #9872A8;
+}
+
 @media screen and (max-width: 1024px)
 {
   .productContainer p {
     font-size: 3vw;
   }
-  button {
-    width: 280px;
-    height: 300px;
-  }
-  button h1 {
+
+  #productDesignBtn h1 {
     font-size: 3vw;
   }
-  button p {
+  #productDesignBtn p {
     font-size: 3vw;
 
   }
-  button label {
+  #productDesignBtn a {
     font-size: 3vw;
   }
 }
