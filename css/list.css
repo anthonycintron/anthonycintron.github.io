@@ -90,6 +90,7 @@ img.thumbnail {
 } */
 .descriptionContainer h3.shortDescription {
   font-size: 2vw;
+  font-family: 'poppinsextralight', Fallback, sans-serif;
 }
 .portfolioItem {
   position: relative;
