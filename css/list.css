@@ -48,7 +48,7 @@ h2.site_domain {
   margin-top: 30px;
   font-size: 2vw;
   float: right;
-  color: #000000;
+  color: #ffffff;
 
   padding: 10px;
   padding-left: 20px;
@@ -61,7 +61,7 @@ h2.site_domain {
   -moz-border-radius: 5px;
 }
 #subNav a:hover {
-  color: #9872A8;
+  color: #ffffff;
   background-color: #000000;
   border-style: solid;
   border-color: #9872A8;
@@ -95,12 +95,16 @@ img.thumbnail {
 }
 .portfolioItem {
   position: relative;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 a.viewBtn {
-  color: #000000;
+  position: relative;
+  color: #ffffff;
   font-size: 2vw;
+
+  top: 30px;
   padding: 10px;
+
   padding-left: 20px;
   padding-right: 20px;
 
@@ -111,7 +115,7 @@ a.viewBtn {
   -moz-border-radius: 5px;
 }
 a.viewBtn:hover {
-  color: #9872A8;
+  color: #ffffff;
   background-color: #000000;
   border-style: solid;
   border-color: #9872A8;
