@@ -1,3 +1,6 @@
+body {
+  background-color: #1E1E1E;
+}
 h1 {
   color: #638d74;
   position: relative;
@@ -16,46 +19,69 @@ h1 {
   margin-left: 50px;
   margin-right: 50px;
 }
-
+.aboutCompanyContainer {
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 50px;
+}
 p {
   font-size: 1.5vw;
   color: #fff;
 }
-
 .detail-container ul li {
   color: #ffffff;
   font-size: 1.5vw;
   font-family: 'poppinsextralight', Fallback, sans-serif;
 }
-
 .detail-container {
   padding-right: 20px;
   margin-top: 60px;
 }
-
 img.logo {
   width: 15%;
   position: relative;
-  margin-left: 50px;
+  margin-left: 105px;
+  margin-right: 30px;
 }
-p.clientBio {
+.clientBio {
+  width: 65%;
+}
+#videoCTAContainer {
+  display: block;
+  margin:auto;
+  width: 890px;
+  height: 165px;
 
-  float: right;
-  clear;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 0px;
+
+  background-color: #000000;
+
+  opacity: 100%;
+
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+#videoThumbnail {
+  width: 30%;
 }
 
-.videoDisplay {
-  margin-top: 80px;
+#videoDescription {
+  margin-left: 30px;
+  width: 64%;
 }
-.youtubeFrame {
-  margin-top: 20px;
-  position: relative;
-  clear;
+#videoDescription h3, #videoDescription p {
+  color: #DAA05D;
+  font-size: 1.5vw;
 }
-* {box-sizing:border-box}
+
+#videoDescription h3 {
+  margin-top: 0px;
+}
+
 
 /* Slideshow container */
 .slideshow-container {

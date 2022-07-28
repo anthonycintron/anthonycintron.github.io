@@ -45,68 +45,42 @@
     <a href="index.html">< Back to List View</a>
   </div>
   <hr style="width:100%;text-align:center;margin:0;  background-color:#5C4E31; height: 2px; border:none;">
-  <div class="row">
+  <div class="aboutCompanyContainer row">
     <img class="logo column" src="../../../images/logos/parakeeto.png"/>
     <p class="clientBio column">Parakeeto helps agencies track the right metrics and increase profitability. They are a technology-leveraged service firm enabling agencies to improve their performance.</p>
   </div>
+  <img src="../../../images/portfolio/product-design/case-studies/parakeeto/parakeeto-hi-fi-designs.png" style="width:100%">
   <div class="container row">
 
-    <!-- Slideshow container -->
-    <div class="slideshow-container row">
 
-      <!-- Full-width images with number and caption text -->
-      <div class="mySlides fade">
-        <div class="text">High-fidelity Design of Estimate Tool</div>
-        <div class="numbertext">1 / 4</div>
-        <img src="../../../images/portfolio/product-design/case-studies/parakeeto/parakeeto-hi-fi-designs.png" style="width:100%">
-
-      </div>
-
-      <div class="mySlides fade">
-        <div class="text">Sketched Ideas</div>
-        <div class="numbertext">2 / 4</div>
-        <img src="../../../images/portfolio/product-design/case-studies/parakeeto/wire-frame sketches.png" style="width:100%">
-
-      </div>
-
-      <div class="mySlides fade">
-        <div class="text">User Journey Map</div>
-        <div class="numbertext">3 / 4</div>
-        <img src="../../../images/portfolio/product-design/case-studies/parakeeto/user journey map.png" style="width:100%">
-
-      </div>
-
-      <div class="mySlides fade">
-        <div class="text">Low-fidelity Wire-frames</div>
-        <div class="numbertext">4 / 4</div>
-        <img src="../../../images/portfolio/product-design/case-studies/parakeeto/low-fi-wire-frame.png" style="width:100%">
-
-      </div>
-
-
-
-      <!-- Next and previous buttons -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
     <div class="detail-container row">
       <h1 class="row">Problem</h1>
       <p class="row">
         Parakeeto's founders were seeking to build a project-based estimation tool for agency business models. They had a hypothesis that agencies could use their process and system to identify resource and business inefficiencies. The challenge was to design and build a product that could be valuable to Parakeeto's target audience. Since the tech startup was bootstrapped, we needed to validate product solutions quickly and effectively.
       </p>
+      <img src="../../../images/portfolio/product-design/case-studies/parakeeto/user journey map.png" style="width:100%">
+
       <h1 class="row">Objective</h1>
       <p class="row">Build and validate an estimation tool against early adopters at software development firms and creative studios.</p>
       <h1>Solution</h1>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/8Ok42AQ4mto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <h3>Design Process</h3>
       <p>
         The design process at Parakeeto went smoothly since both founders had prior experiences at tech companies. The team adapted to our daily design thinking sessions for ideating and iterating through solutions. Within a month, we built a solution and tested it against users through our customer development program. Over time we were able to refine the criteria of our ideal buyer. Our customer development program concluded after several months. We collected 100s of user feedback, a product backlog and roadmap, and a direction for the product team to move forward.
       </p>
+      <img src="../../../images/portfolio/product-design/case-studies/parakeeto/low-fi-wire-frame.png" style="width:100%">
       <h3>Prototype</h3>
       <p>
         Our initial prototype was low effort and high impact since it was a static page that looked like an app. This simple "paper" prototype made it easy for us to test high-level business assumptions with our users, without wasting time on technology overhead. The next prototype version was a bit more sophisticated since it was processing data (project estimates) in a spreadsheet. We would use the synthesized data and visual presentation in our second round customer interviews. After a few months and a three dozen customer interviews, we released a candidate version of the product to early adopters for self-use.
       </p>
-
+      <a href="https://youtu.be/8Ok42AQ4mto">
+        <div id="videoCTAContainer" class="row">
+          <img id="videoThumbnail" class="column" src="../../../images/portfolio/product-design/case-studies/parakeeto/parakeeto-demo.png" />
+          <div id="videoDescription" class="column">
+            <h3>Beta Demo</h3>
+            <p>Co-founder, Marcel Petitpas walks audience through final release candidate.</p>
+          </div>
+        </div>
+      </a>
       <h3>Beta Release</h3>
       <p>
         By the time we were at the beta release version, we had built a list of early adopters who provided ample feedback in the early prototype stages. We released a full beta version to early adopters so that they may begin using the tool on their own. Concurrently we implemented analytics so that we may learn about our users' behavior habits and paths within the product.
@@ -114,42 +88,6 @@
 
     </div>
 
-  <!-- The dots/circles -->
-  <!-- <div style="text-align:left">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div> -->
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-    }
-  </script>
   </div>
 
   <div id="footer row">
