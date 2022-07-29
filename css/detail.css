@@ -49,13 +49,13 @@ img.logo {
 #videoCTAContainer {
   display: block;
   margin:auto;
-  width: 890px;
-  height: 165px;
+  width: 600px;
+  height: 125px;
 
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
-  padding-right: 0px;
+  padding-right: 30px;
 
   background-color: #000000;
 
@@ -64,6 +64,10 @@ img.logo {
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
+}
+#videoDescription h3 {
+  font-family: sans-serif;
+  font-weight: bold;
 }
 #videoThumbnail {
   width: 30%;
