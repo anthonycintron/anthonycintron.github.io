@@ -72,7 +72,7 @@ h2.site_domain, img.avatar {
 #experienceContainer p {
   color: #fff;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 15px;
 }
 #experienceContainer img.designsprints {
   position: relative;
@@ -152,63 +152,40 @@ p.sectionOverview {
   font-size: 1.5vw;
   color: #fff;
 }
+
+
+
 #productDesignBtn {
   position: relative;
   text-align: center;
-
-  background-color: #000000;
-  border-style: solid;
-  border-color: #5C4E31;
-
-
-  width: 90%;
+  width: 100%;
   height: 100%;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding-bottom: 50px;
-
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-}
-#productDesignBtn h1 {
-  position: relative;
-  font-size:3vw;
-}
-#productDesignBtn p {
-  position: relative;
-  font-size: 2vw;
-}
-
-#productDesignBtn p.sectionOverview {
-  font-size: 1.5vw;
+  margin: auto;
 
 }
 #productDesignBtn a {
-  position: relative;
-  text-decoration: none;
-  top: 30px;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #000000;
-  background-color: #9872A8;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    top: 30px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    background-color: #9872A8;
 
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 
-  font-size: 2vw;
-  font-family: 'poppinsregular', Fallback, sans-serif;
+    font-size: 2vw;
+    font-family: 'poppinsregular', Fallback, sans-serif;
 }
-
-
-
 #productDesignBtn a:hover {
-  color: #9872A8;
-  background-color: #000000;
+  color: #fff;
   border-style: solid;
   border-color: #9872A8;
+  background-color: #000;
 }
 @media screen and (max-width: 1024px)
 {
