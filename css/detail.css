@@ -60,7 +60,7 @@ img.logo {
   margin-top: 50px;
   margin-bottom: 50px;
 
-  background-color: ##9873a8;
+  background-color: #9873a8;
 
   opacity: 100%;
 
@@ -81,7 +81,7 @@ img.logo {
   width: 64%;
 }
 #videoDescription h3, #videoDescription p {
-  color: #DAA05D;
+  color: #fff;
   font-size: 1.5vw;
 }
 
