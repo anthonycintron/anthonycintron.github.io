@@ -9,16 +9,14 @@
     margin: 0;
     padding: 0;
     background-color: #000;
-    overflow: hidden;
   }
   
   #animation_container {
     position: relative;
     margin: 0 auto;
-    width: 100%;
-    max-width: 1080px;
-    height: 0;
-    padding-bottom: 157.22%; /* 1698/1080 = 157.22% aspect ratio */
+    width: 1080px;
+    height: 1698px;
+    max-width: 100%;
     background-color: rgba(0, 0, 0, 1.00);
   }
   
@@ -43,16 +41,12 @@
     display: block;
   }
   
-  .error-message {
-    color: white;
-    text-align: center;
-    padding: 50px;
-    font-family: Arial, sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+  /* Responsive scaling */
+  @media (max-width: 1080px) {
+    #animation_container {
+      transform-origin: top center;
+      transform: scale(calc(100vw / 1080));
+    }
   }
 </style>
 </head>
@@ -67,157 +61,66 @@
 	<script>
 	var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 	
-	function showError(message) {
-		document.getElementById('animation_container').innerHTML = '<div class="error-message">' + message + '</div>';
-	}
-	
 	function init() {
-		try {
-			// Check if required dependencies are loaded
-			if (typeof createjs === 'undefined') {
-				console.error('CreateJS library failed to load');
-				showError('Animation library unavailable');
-				return;
-			}
-			
-			if (typeof AdobeAn === 'undefined') {
-				console.error('Adobe Animate library failed to load');
-				showError('Animation temporarily unavailable');
-				return;
-			}
-			
-			canvas = document.getElementById("canvas");
-			anim_container = document.getElementById("animation_container");
-			dom_overlay_container = document.getElementById("dom_overlay_container");
-			
-			var comp = AdobeAn.getComposition("5E33F5F7024F4F88B83C8A35F47BEF85");
-			if (!comp) {
-				showError('Animation composition not found');
-				return;
-			}
-			
-			var lib = comp.getLibrary();
-			var loader = new createjs.LoadQueue(false);
-			
-			loader.addEventListener("fileload", function(evt) {
-				handleFileLoad(evt, comp);
-			});
-			
-			loader.addEventListener("complete", function(evt) {
-				handleComplete(evt, comp);
-			});
-			
-			loader.addEventListener("error", function(evt) {
-				console.error('Failed to load:', evt.item);
-				showError('Failed to load animation assets');
-			});
-			
-			var manifest = lib.properties.manifest;
-			if (manifest && manifest.length > 0) {
-				loader.loadManifest(manifest);
-			} else {
-				// No manifest, proceed directly to complete
-				handleComplete({target: loader}, comp);
-			}
-		} catch (error) {
-			console.error('Animation initialization error:', error);
-			showError('Animation initialization failed');
+		canvas = document.getElementById("canvas");
+		anim_container = document.getElementById("animation_container");
+		dom_overlay_container = document.getElementById("dom_overlay_container");
+		
+		var comp = AdobeAn.getComposition("5E33F5F7024F4F88B83C8A35F47BEF85");
+		var lib = comp.getLibrary();
+		var loader = new createjs.LoadQueue(false);
+		
+		loader.addEventListener("fileload", function(evt) {
+			handleFileLoad(evt, comp);
+		});
+		
+		loader.addEventListener("complete", function(evt) {
+			handleComplete(evt, comp);
+		});
+		
+		var manifest = lib.properties.manifest;
+		if (manifest && manifest.length > 0) {
+			loader.loadManifest(manifest);
+		} else {
+			handleComplete({target: loader}, comp);
 		}
 	}
 	
 	function handleFileLoad(evt, comp) {
-		try {
-			var images = comp.getImages();	
-			if (evt && evt.item && evt.item.type == "image") { 
-				images[evt.item.id] = evt.result; 
-			}
-		} catch (error) {
-			console.error('File load error:', error);
+		var images = comp.getImages();	
+		if (evt && evt.item && evt.item.type == "image") { 
+			images[evt.item.id] = evt.result; 
 		}
 	}
 	
 	function handleComplete(evt, comp) {
-		try {
-			var lib = comp.getLibrary();
-			var ss = comp.getSpriteSheet();
-			var queue = evt.target;
-			var ssMetadata = lib.ssMetadata;
-			
-			for(var i = 0; i < ssMetadata.length; i++) {
-				ss[ssMetadata[i].name] = new createjs.SpriteSheet({
-					"images": [queue.getResult(ssMetadata[i].name)], 
-					"frames": ssMetadata[i].frames
-				});
-			}
-			
-			exportRoot = new lib.HarlemApt();
-			stage = new lib.Stage(canvas);
-			
-			// Ensure stage is properly sized
-			stage.canvas.width = canvas.width;
-			stage.canvas.height = canvas.height;
-			
-			fnStartAnimation = function() {
-				try {
-					stage.addChild(exportRoot);
-					createjs.Ticker.framerate = lib.properties.fps || 24;
-					
-					// Use a more robust ticker setup
-					createjs.Ticker.timingMode = createjs.Ticker.RAF;
-					createjs.Ticker.addEventListener("tick", handleTick);
-					
-				} catch (startError) {
-					console.error('Animation start error:', startError);
-					showError('Animation failed to start');
-				}
-			};
-			
-			function handleTick(event) {
-				try {
-					if (stage) {
-						stage.update(event);
-					}
-				} catch (tickError) {
-					console.error('Tick error:', tickError);
-					// Remove the problematic event listener to prevent further errors
-					createjs.Ticker.removeEventListener("tick", handleTick);
-					showError('Animation playback error');
-				}
-			}
-			
-			// Code to support hidpi screens and responsive scaling
-			if (typeof AdobeAn.makeResponsive === 'function') {
-				AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, anim_container, dom_overlay_container]);
-			}
-			
-			AdobeAn.compositionLoaded(lib.properties.id);
-			fnStartAnimation();
-			
-		} catch (error) {
-			console.error('Animation complete error:', error);
-			showError('Animation setup failed');
+		var lib = comp.getLibrary();
+		var ss = comp.getSpriteSheet();
+		var queue = evt.target;
+		var ssMetadata = lib.ssMetadata;
+		
+		for(var i = 0; i < ssMetadata.length; i++) {
+			ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+				"images": [queue.getResult(ssMetadata[i].name)], 
+				"frames": ssMetadata[i].frames
+			});
 		}
+		
+		exportRoot = new lib.HarlemApt();
+		stage = new lib.Stage(canvas);
+		
+		fnStartAnimation = function() {
+			stage.addChild(exportRoot);
+			createjs.Ticker.framerate = lib.properties.fps;
+			createjs.Ticker.addEventListener("tick", stage);
+		};
+		
+		AdobeAn.makeResponsive(true, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
+		AdobeAn.compositionLoaded(lib.properties.id);
+		fnStartAnimation();
 	}
 	
-	// Initialize when DOM is ready
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', init);
-	} else {
-		init();
-	}
-	
-	// Global error handler
-	window.addEventListener('error', function(e) {
-		console.error('Global error:', e.error);
-	});
-	
-	// Handle window resize for responsive behavior
-	window.addEventListener('resize', function() {
-		if (stage && canvas) {
-			// Let AdobeAn.makeResponsive handle the resizing
-		}
-	});
-	
+	init();
 	</script>
 </body>
 </html>
