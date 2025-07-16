@@ -1,0 +1,33 @@
+{
+  "name": "anthony-cintron-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Anthony Cintron - Product Strategist, Technologist and Designer",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build completed - static site ready for deployment'",
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "product-design",
+    "ux",
+    "ui",
+    "product-strategy"
+  ],
+  "author": "Anthony Cintron",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthonycintron/portfolio"
+  },
+  "homepage": "https://anthonycintron.com",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
