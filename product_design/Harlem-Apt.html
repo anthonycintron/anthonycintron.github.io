@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<!--
-	NOTES:
-	1. All tokens are represented by '$' sign in the template.
-	2. You can write your code only wherever mentioned.
-	3. All occurrences of existing tokens will be replaced by their appropriate values.
-	4. Blank lines will be removed automatically.
-	5. Remove unnecessary comments before creating your template.
--->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -19,6 +11,12 @@
 	left:0;right:0;
 	top:0;bottom:0;
   }
+  .error-message {
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+  }
 </style>
 </head>
 <body style="margin:0px;">
@@ -29,68 +27,145 @@
 	</div>
 	
 	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-	<script>
-	function handleScriptError(scriptName) {
-		console.error('Failed to load script:', scriptName);
-		document.getElementById('animation_container').innerHTML = '<div style="color: white; text-align: center; padding: 50px;">Animation temporarily unavailable</div>';
-	}
-	</script>
 	<script src="Harlem-Apt.js"></script>
 	<script>
 	var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+	
+	function showError(message) {
+		document.getElementById('animation_container').innerHTML = '<div class="error-message">' + message + '</div>';
+	}
+	
 	function init() {
-		// Check if required dependencies are loaded
-		if (typeof createjs === 'undefined') {
-			console.error('CreateJS library failed to load');
-			document.getElementById('animation_container').innerHTML = '<div style="color: white; text-align: center; padding: 50px;">Animation library unavailable</div>';
-			return;
+		try {
+			// Check if required dependencies are loaded
+			if (typeof createjs === 'undefined') {
+				console.error('CreateJS library failed to load');
+				showError('Animation library unavailable');
+				return;
+			}
+			
+			if (typeof AdobeAn === 'undefined') {
+				console.error('Adobe Animate library failed to load');
+				showError('Animation temporarily unavailable');
+				return;
+			}
+			
+			canvas = document.getElementById("canvas");
+			anim_container = document.getElementById("animation_container");
+			dom_overlay_container = document.getElementById("dom_overlay_container");
+			
+			var comp = AdobeAn.getComposition("5E33F5F7024F4F88B83C8A35F47BEF85");
+			if (!comp) {
+				showError('Animation composition not found');
+				return;
+			}
+			
+			var lib = comp.getLibrary();
+			var loader = new createjs.LoadQueue(false);
+			
+			loader.addEventListener("fileload", function(evt) {
+				handleFileLoad(evt, comp);
+			});
+			
+			loader.addEventListener("complete", function(evt) {
+				handleComplete(evt, comp);
+			});
+			
+			loader.addEventListener("error", function(evt) {
+				console.error('Failed to load:', evt.item);
+				showError('Failed to load animation assets');
+			});
+			
+			var manifest = lib.properties.manifest;
+			if (manifest && manifest.length > 0) {
+				loader.loadManifest(manifest);
+			} else {
+				// No manifest, proceed directly to complete
+				handleComplete({target: loader}, comp);
+			}
+		} catch (error) {
+			console.error('Animation initialization error:', error);
+			showError('Animation initialization failed');
 		}
-		
-		if (typeof AdobeAn === 'undefined') {
-			console.error('Adobe Animate library failed to load');
-			document.getElementById('animation_container').innerHTML = '<div style="color: white; text-align: center; padding: 50px;">Animation temporarily unavailable</div>';
-			return;
-		}
-		
-		canvas = document.getElementById("canvas");
-		anim_container = document.getElementById("animation_container");
-		dom_overlay_container = document.getElementById("dom_overlay_container");
-		var comp=AdobeAn.getComposition("5E33F5F7024F4F88B83C8A35F47BEF85");
-		var lib=comp.getLibrary();
-		var loader = new createjs.LoadQueue(false);
-		loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-		loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-		var lib=comp.getLibrary();
-		loader.loadManifest(lib.properties.manifest);
 	}
+	
 	function handleFileLoad(evt, comp) {
-		var images=comp.getImages();	
-		if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
-	}
-	function handleComplete(evt,comp) {
-		//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-		var lib=comp.getLibrary();
-		var ss=comp.getSpriteSheet();
-		var queue = evt.target;
-		var ssMetadata = lib.ssMetadata;
-		for(i=0; i<ssMetadata.length; i++) {
-			ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+		try {
+			var images = comp.getImages();	
+			if (evt && evt.item && evt.item.type == "image") { 
+				images[evt.item.id] = evt.result; 
+			}
+		} catch (error) {
+			console.error('File load error:', error);
 		}
-		exportRoot = new lib.HarlemApt();
-		stage = new lib.Stage(canvas);	
-		//Registers the "tick" event listener.
-		fnStartAnimation = function() {
-			stage.addChild(exportRoot);
-			createjs.Ticker.framerate = lib.properties.fps;
-			createjs.Ticker.addEventListener("tick", stage);
-			stage.addEventListener("tick", stage._handleTick);
-		}	    
-		//Code to support hidpi screens and responsive scaling.
-		AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);	
-		AdobeAn.compositionLoaded(lib.properties.id);
-		fnStartAnimation();
 	}
-	document.addEventListener('DOMContentLoaded', init);
+	
+	function handleComplete(evt, comp) {
+		try {
+			var lib = comp.getLibrary();
+			var ss = comp.getSpriteSheet();
+			var queue = evt.target;
+			var ssMetadata = lib.ssMetadata;
+			
+			for(var i = 0; i < ssMetadata.length; i++) {
+				ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+					"images": [queue.getResult(ssMetadata[i].name)], 
+					"frames": ssMetadata[i].frames
+				});
+			}
+			
+			exportRoot = new lib.HarlemApt();
+			stage = new lib.Stage(canvas);
+			
+			// Add error handling for stage events
+			stage.enableMouseOver(10);
+			stage.mouseMoveOutside = true;
+			
+			fnStartAnimation = function() {
+				try {
+					stage.addChild(exportRoot);
+					createjs.Ticker.framerate = lib.properties.fps;
+					createjs.Ticker.addEventListener("tick", function(event) {
+						try {
+							stage.update(event);
+						} catch (tickError) {
+							console.error('Tick error:', tickError);
+							// Remove the problematic event listener to prevent further errors
+							createjs.Ticker.removeAllEventListeners("tick");
+						}
+					});
+				} catch (startError) {
+					console.error('Animation start error:', startError);
+					showError('Animation failed to start');
+				}
+			};
+			
+			// Code to support hidpi screens and responsive scaling
+			if (typeof AdobeAn.makeResponsive === 'function') {
+				AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, anim_container, dom_overlay_container]);
+			}
+			
+			AdobeAn.compositionLoaded(lib.properties.id);
+			fnStartAnimation();
+			
+		} catch (error) {
+			console.error('Animation complete error:', error);
+			showError('Animation setup failed');
+		}
+	}
+	
+	// Initialize when DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', init);
+	} else {
+		init();
+	}
+	
+	// Global error handler
+	window.addEventListener('error', function(e) {
+		console.error('Global error:', e.error);
+	});
+	
 	</script>
 </body>
 </html>
