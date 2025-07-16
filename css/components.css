@@ -138,7 +138,7 @@
 /* Navigation Component */
 .sub-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: var(--spacing-lg) 0;
   border-bottom: 2px solid var(--accent-brown);
@@ -146,10 +146,16 @@
   gap: var(--spacing-md);
 }
 
+.sub-nav .btn {
+  order: -1;
+  margin-right: auto;
+}
+
 .breadcrumb {
   color: var(--accent-gold);
   font-size: var(--fs-h3);
   margin: 0;
+  margin-left: auto;
 }
 
 .breadcrumb span {
