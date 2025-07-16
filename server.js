@@ -21,7 +21,8 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
-  let filePath = '.' + req.url;
+  // Strip query parameters from URL to handle files like "Harlem-Apt.js?1657133247922"
+  let filePath = '.' + req.url.split('?')[0];
   if (filePath === './') {
     filePath = './index.html';
   }
