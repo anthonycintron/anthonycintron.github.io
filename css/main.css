@@ -153,6 +153,36 @@ p.sectionOverview {
   color: #fff;
 }
 
+/* Animation iframe styling */
+.animation-wrapper {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#HarlemFrame {
+  width: 100%;
+  height: 1698px;
+  border: none;
+  display: block;
+}
+
+/* Responsive iframe */
+@media screen and (max-width: 1080px) {
+  #HarlemFrame {
+    height: calc(1698px * (100vw / 1080px));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #HarlemFrame {
+    height: calc(1698px * (100vw / 1080px));
+  }
+}
 
 
 #productDesignBtn {
