@@ -22,13 +22,14 @@
   }
 </style>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="Harlem-Apt.js?1657133247922" onerror="handleScriptError('Harlem-Apt.js')"></script>
 <script>
 function handleScriptError(scriptName) {
 	console.error('Failed to load script:', scriptName);
 	document.getElementById('animation_container').innerHTML = '<div style="color: white; text-align: center; padding: 50px;">Animation temporarily unavailable</div>';
 }
-
+</script>
+<script src="Harlem-Apt.js?1657133247922" onerror="handleScriptError('Harlem-Apt.js')"></script>
+<script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
 	// Check if required dependencies are loaded
