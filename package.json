@@ -4,7 +4,7 @@
   "description": "Portfolio website for Anthony Cintron - Product Strategist, Technologist and Designer",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Build completed - static site ready for deployment'",
+    "build": "node build.js",
     "start": "python3 -m http.server 8000",
     "dev": "python3 -m http.server 8000",
     "serve": "python3 -m http.server 8000"
