@@ -5,32 +5,61 @@
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <title>Harlem-Apt</title>
 <style>
-  #animation_container {
-	position: relative;
-	margin: 0 auto;
-	width: 1080px;
-	height: 1698px;
-	background-color: rgba(0, 0, 0, 1.00);
-  }
-  .error-message {
-    color: white;
-    text-align: center;
-    padding: 50px;
-    font-family: Arial, sans-serif;
-  }
   body {
     margin: 0;
     padding: 0;
     background-color: #000;
     overflow: hidden;
   }
+  
+  #animation_container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1080px;
+    height: 0;
+    padding-bottom: 157.22%; /* 1698/1080 = 157.22% aspect ratio */
+    background-color: rgba(0, 0, 0, 1.00);
+  }
+  
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 1.00);
+  }
+  
+  #dom_overlay_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    display: block;
+  }
+  
+  .error-message {
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
 </style>
 </head>
-<body style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(0, 0, 0, 1.00); width:1080px; height:1698px">
-		<canvas id="canvas" width="1080" height="1698" style="position: absolute; display: block; background-color:rgba(0, 0, 0, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1080px; height:1698px; position: absolute; left: 0px; top: 0px; display: block;">
-		</div>
+<body>
+	<div id="animation_container">
+		<canvas id="canvas" width="1080" height="1698"></canvas>
+		<div id="dom_overlay_container"></div>
 	</div>
 	
 	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
@@ -124,28 +153,37 @@
 			exportRoot = new lib.HarlemApt();
 			stage = new lib.Stage(canvas);
 			
-			// Add error handling for stage events
-			stage.enableMouseOver(10);
-			stage.mouseMoveOutside = true;
+			// Ensure stage is properly sized
+			stage.canvas.width = canvas.width;
+			stage.canvas.height = canvas.height;
 			
 			fnStartAnimation = function() {
 				try {
 					stage.addChild(exportRoot);
-					createjs.Ticker.framerate = lib.properties.fps;
-					createjs.Ticker.addEventListener("tick", function(event) {
-						try {
-							stage.update(event);
-						} catch (tickError) {
-							console.error('Tick error:', tickError);
-							// Remove the problematic event listener to prevent further errors
-							createjs.Ticker.removeAllEventListeners("tick");
-						}
-					});
+					createjs.Ticker.framerate = lib.properties.fps || 24;
+					
+					// Use a more robust ticker setup
+					createjs.Ticker.timingMode = createjs.Ticker.RAF;
+					createjs.Ticker.addEventListener("tick", handleTick);
+					
 				} catch (startError) {
 					console.error('Animation start error:', startError);
 					showError('Animation failed to start');
 				}
 			};
+			
+			function handleTick(event) {
+				try {
+					if (stage) {
+						stage.update(event);
+					}
+				} catch (tickError) {
+					console.error('Tick error:', tickError);
+					// Remove the problematic event listener to prevent further errors
+					createjs.Ticker.removeEventListener("tick", handleTick);
+					showError('Animation playback error');
+				}
+			}
 			
 			// Code to support hidpi screens and responsive scaling
 			if (typeof AdobeAn.makeResponsive === 'function') {
@@ -171,6 +209,13 @@
 	// Global error handler
 	window.addEventListener('error', function(e) {
 		console.error('Global error:', e.error);
+	});
+	
+	// Handle window resize for responsive behavior
+	window.addEventListener('resize', function() {
+		if (stage && canvas) {
+			// Let AdobeAn.makeResponsive handle the resizing
+		}
 	});
 	
 	</script>
